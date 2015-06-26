@@ -1,0 +1,5 @@
+This folder will hold the virtualenv for everything. It is NOT version controlled.
+create it with pyvenv-3.4 venv
+then (if you want to change the shell prefix from (venv) to (PROJECTNAME)
+vim activateVenv, search for (venv), change to (PROJECTNAME)
+then follow the instructions in config/README they will show you how to install everything to the venv
