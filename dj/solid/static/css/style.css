@@ -14,6 +14,14 @@
 @import url("hoverex-all.css") screen;
 
 /*	################################################################
+	0. DAN
+################################################################# */
+.main-wrapper {
+    background: rgb(224, 239, 241);
+    border-radius: 10px;
+}
+
+/*	################################################################
 	1. GENERAL STRUCTURES
 ################################################################# */
 * {
@@ -22,7 +30,7 @@
 }
 
 body {
-    background: #ffffff;
+    background: rgb(125, 180, 181);
     margin: 0;
     height: 100%;
     color: #384452;
@@ -245,7 +253,7 @@ a:focus {
 
 /* Portfolio Wrap */
 #portfoliowrap {
-    padding-top: 60px;
+    /*padding-top: 60px;*/
     margin-bottom: 60px;
     display: block;
     text-align: center
@@ -375,14 +383,15 @@ a:focus {
 /* General Tweaks */
 
 #blue {
-    background: #00b3fe;
-    margin-top: 60px;
+    /*background: #00b3fe;*/
+    background: rgba(104, 1, 72, 0.5);
+    margin-top: 20px;
     margin-bottom: 60px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 5px;
+    /*padding-bottom: 25px;*/
 }
 
-#blue h3 {
+#blue h1 {
     color: white;
     margin-left: 15px;
 }
