@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n staticfiles mezzanine_tags blog_tags %}
+
+{# Skipping  meta_keywords and meta_description #}
+{# Skipping meta_title, defaults to page.title, overwrite if necessary #}
+{# Skipping extra_css, extra_js #}
+{# Skipping extra_head #}
+
+{% block body_id %}body_id{% endblock %}    {# for css only! #}
+{# block intro is behind the navbar, not sure what its used for #}
+
+{# block title_wrapper is the blue id title bar, if you overwrite there will be no blue title bar #}
+{# Skipping title, defaults to page.title, overwrite if necessary #}
+{# displays any messages passed in here! #}
+
+{# all_content wraps everything from here until the footer. Overwrite it for a completely custom content #}
+{# for the wrappers, overwrite left_width, middle_width, right_width to adjust. default 2, 7, 3 #}
+{# left_wrapper contains left_panel, which is left nav sidebar. #}
+{# main_wrapper contains just main, which is where we can put content for normal page! #}
+{# right_wrapper contains "includes/user_panel.html and right_panel, which has twitter (if installed)  #}
+
+{% block main %}main!{% endblock %}
+
+{# Don't overwrite these unless you don't want them there! #}
+{# TODO Right panel comes to the middle if the main content is short, check #}
+{% comment %}
+    {% block left_wrapper%}
+    {% endblock %}
+
+    {% block main_wrapper%}
+    {% endblock %}
+
+    {% block right_wrapper%}
+    {% endblock %}
+{% endcomment %}
+
+{# then footer! #}
