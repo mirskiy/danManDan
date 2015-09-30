@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="tc" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.pyc">
+    <serverData>
+      <paths name="tc">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/me/projects/mezzTest/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/me/projects/mezzTest/venv" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
