@@ -1,0 +1,56 @@
+{# card for displaying short summary of a portfolio item #}
+{# expects the portfolio item to be called item #}
+
+{% load mezzanine_tags staticfiles %}
+
+{#<div class="show-grid">#}
+<div class="col-md-6">
+{#    {% editable item.title item.position item.location item.start_date item.end_date item.content item.short_description %}#}
+    {# TODO editable isn't working. Prolly need to post for help - need example #}
+    <div class="card">
+
+        <div class="card-header">
+            <div class="card-title">
+                {% if item.href %}<a href="{{ item.href }}">{% endif %}
+                    {{ item.title }}
+                    {% if item.href %}
+                        <i class="fa fa-link"></i>   {# i is icon, fa is font-awesome. it adds the icon in #}
+                    {% endif %}
+                {% if item.href %}</a>{% endif %}
+            </div>
+            <div class="row facts hidden-xs hidden-sm">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-8">{{ item.position }} <b>|</b> {{ item.location }}</div>
+                <div class="col-xs-3 card-date"><b>{{ item.date_range }}</b></div>
+            </div>
+            <div class="facts visible-xs visible-sm">
+                <div>{{ item.position }} <b>|</b> {{ item.location }}</div>
+                <div><b>{{ item.date_range }}</b></div>
+            </div>
+        </div>
+
+        <div class="card-image">
+            <img class="img-thumbnail" src="{{ MEDIA_URL }}{% thumbnail item.featured_image 400 225 %}" alt="{{ item.title }} image">
+        </div>
+
+        <div class="card-content">
+
+            <div class="row skills hidden-xs">
+{#                <div class="col-xs-2"><b>Skills:</b></div>#}
+                <div class="col-xs-1"></div>
+                {# TODO limit this server side! #}
+                {% for skillused in item.skillsused.all|slice:":5" %}
+                    {# TODO put the rating inside the tab #}
+                    <div class="col-xs-2">{{ skillused.skill.title }}</div>
+                {% endfor %}
+            </div>  <!-- close skills row -->
+
+            <div class="description">
+                    {{ item.short_description|richtext_filters|safe }}
+            </div>
+        </div>
+
+    </div>      <!-- end card -->
+{#    {% endeditable %}#}
+</div>
+{#</div>#}

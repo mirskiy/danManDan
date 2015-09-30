@@ -21,6 +21,10 @@
     border-radius: 10px;
 }
 
+#blue {
+    border-radius: 5px;
+}
+
 /*	################################################################
 	1. GENERAL STRUCTURES
 ################################################################# */
@@ -36,6 +40,7 @@ body {
     color: #384452;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+    padding-top: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -269,21 +274,6 @@ a:focus {
     display: block;
 }
 
-.portfolio-item .title:before {
-    border-radius: 0;
-    display: none
-}
-
-.portfolio-item p {
-    margin: 0px 0 30px;
-}
-
-.portfolio-item h3 {
-    margin: -10px 0 10px;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
 .tpl6 h3 {
     color: #fff;
     margin: 0;
@@ -386,7 +376,7 @@ a:focus {
     /*background: #00b3fe;*/
     background: rgba(104, 1, 72, 0.5);
     margin-top: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     padding-top: 5px;
     /*padding-bottom: 25px;*/
 }

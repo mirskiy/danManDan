@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% load mezzanine_tags staticfiles %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "css/portfolio.css" %}">
+{% endblock %}
+
+{# Get rid of left and right panels #}
+{% block left_panel %}{% endblock %}
+{% block right_panel %}{% endblock %}
+
+{# We should look into span4 and the like. Check the template he is basing his stuff off #}
+{% block main_width %}12{% endblock %}
+{% block main %}
+    <div id="portfoliowrap">
+
+        <div class="section introduction">
+            <div class="section-header h3">Currently:</div>
+            <div class="section-content">
+                {% editable page.portfolio.content %}
+                    {{ page.portfolio.content|richtext_filters|safe }}
+                {% endeditable %}
+            </div>
+        </div>
+
+        <div class="section skills">
+            {# TODO highlight on scroll or + to expand? #}
+            {# TODO indent/pad each li #}
+            <div class="section-header h3">Skills I want to develop (and where I've used them):</div>
+            <div class="section-content">
+                {% for skill in skills %}
+                    {% if skill.featured %}
+                        {{ skill.title }}
+                        <ul>
+                            {% for portfolioitem in skill.portfolioskillused_set.all %}
+                                <li><b>{{ portfolioitem.item.title }}</b>: {{ portfolioitem.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        {% for category in categories %}
+            <div class="section portfolioitem-set">
+                <div class="section-header h3">{{ category.title }}</div>
+                {# TODO fix indenting and figure out what recentitems and portfolio are #}
+                <div class="section-content">
+                        <div class="row">
+                            {% for item in category.portfolioitems.all %}
+                                {% include "includes/portfolioitem_short.html" %}
+                        {% if forloop.counter|divisibleby:2 %}</div><div class="row">{% endif %}
+                            {% endfor %}
+                        </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% comment %}
+        {# TODO pull from relevant work category #}
+        {% for category in categories %}
+            <div class="relevant-work">
+                <div class="h3">{{ category.title }}</div>
+                <div class="portfolio-centered"><div class="recentitems portfolio">
+                    {#             <div class="row show-grid">#}
+                    {#                        {% for item in relevant_work_category.portfolioitems.all %}#}
+                    {% for item in category.portfolioitems.all %}
+                        {% include "includes/portfolioitem_short.html" %}
+                    {% endfor %}
+                </div></div>
+            </div>
+        {% endfor %}
+        {% endcomment %}
+
+        {# TODO add: accomplishmenst and stuff, testemonials/praise, other work #}
+
+    </div>          <!-- close profoliowrap -->
+{% endblock %}     <!-- close row and block -->
+

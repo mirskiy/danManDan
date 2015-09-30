@@ -1,0 +1,83 @@
+@import "card.css";
+
+/* TODO This doesn't really do much - look into */
+
+/* #### TEMP additions */
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(86, 61, 124, .15);
+    border: 1px solid rgba(86, 61, 124, .2);
+}
+
+/* Portfolio sections and stuff */
+#portfoliowrap {
+    text-align: left;
+    line-height: 20px;
+}
+
+#portfoliowrap .section-header {
+    ;
+}
+
+#portfoliowrap .section-content {
+    padding: 0 5% 16px;
+}
+
+#portfoliowrap .portfolioitem-set .section-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#portfoliowrap .section.skills li {
+    padding-left: 5%;
+}
+
+/* Card stuff */
+.card {
+    background-color: rgba(86, 61, 124, .15);
+}
+
+.card .card-header {
+    padding: 8px 16px;
+}
+
+.card .card-header a {
+    color: black;
+}
+
+.card .card-header a:hover {
+    text-decoration: underline;
+}
+
+.card .card-header i {
+    font-size: smaller;
+    opacity: 0.5;
+}
+
+.card .card-header .facts {
+    text-align: left;
+}
+
+.card .card-date {
+    text-align: right;
+}
+
+.card .card-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card .card-content {
+    padding-top: 8px;
+    line-height: 20px;
+    overflow-y: auto;
+    height: 104px; /* top 8 + bottom padding 16 + 4*20
+    /* height = 2*(padding + margin + border) + n*lineheight */
+}
+
+.card .card-content p {
+    line-height: inherit;
+}
+
