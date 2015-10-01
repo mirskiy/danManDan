@@ -17,7 +17,7 @@
     <div id="portfoliowrap">
 
         <div class="section introduction">
-            <div class="section-header h3">Currently:</div>
+            <div class="section-header h3">Currently</div>
             <div class="section-content">
                 {% editable page.portfolio.content %}
                     {{ page.portfolio.content|richtext_filters|safe }}
@@ -28,7 +28,7 @@
         <div class="section skills">
             {# TODO highlight on scroll or + to expand? #}
             {# TODO indent/pad each li #}
-            <div class="section-header h3">Skills I want to develop (and where I've used them):</div>
+            <div class="section-header h3">Skills I want to develop (and where I've used them)</div>
             <div class="section-content">
                 {% for skill in skills %}
                     {% if skill.featured %}
