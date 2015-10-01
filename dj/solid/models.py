@@ -87,13 +87,17 @@ class PortfolioItem(Page, RichText):
     def _date_range(self):
         """ Represents start_date to end_date nicely """
         date_format = "%b '%y"
-        daterange_string = self.start_date.strftime(date_format)
-        daterange_string += " - "
-        if self.end_date is None:
-            return daterange_string + "Now"
+        start_date_str = self.start_date.strftime(date_format)
 
-        daterange_string += self.end_date.strftime(date_format)
-        return daterange_string
+        if self.end_date is None:
+            return start_date_str + "- Now"
+
+        end_date_str = self.end_date.strftime(date_format)
+
+        if start_date_str == end_date_str:
+            return start_date_str
+
+        return start_date_str + " - " + end_date_str
     date_range = property(_date_range)
 
     class Meta:
